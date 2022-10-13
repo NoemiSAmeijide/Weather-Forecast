@@ -48,8 +48,8 @@ let mon = [
 
 let celcius = true;
 
-//let city = prompt("Enter a city");
-let city = "paris";
+let city = prompt("Enter a city");
+//let city = "paris";
 if (city === null) {
   city = "";
 }
@@ -113,7 +113,7 @@ ${now.getMinutes()}</p>`;
 //CITY NAME
 //here we select and put the city name we are looking for in the html
 let selCity = document.querySelector("#selected-city");
-selCity.innerHTML = city;
+selCity.innerHTML = city.toUpperCase();
 
 //CONVERTION
 let convButton = document.querySelector("#fcf");
