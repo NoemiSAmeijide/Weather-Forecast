@@ -1,0 +1,28 @@
+body {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  background-color: antiquewhite;
+}
+
+.vertical {
+  margin: 0;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.image-little {
+  margin: 1rem;
+  width: 4rem;
+  height: 4rem;
+}
+.image-mid {
+  margin: 1rem;
+  width: 10rem;
+  height: 10rem;
+}
