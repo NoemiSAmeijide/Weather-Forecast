@@ -14,6 +14,12 @@ body {
   transform: translateY(-50%);
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
+  width: 100vw;
+  height: 600px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: url("../img/sunnyday.jpg");
+  background-size: cover;
 }
 
 .image-little {

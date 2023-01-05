@@ -48,8 +48,8 @@ let mon = [
 
 let celcius = true;
 
-let city = prompt("Enter a city");
-//let city = "paris";
+// let city = prompt("Enter a city");
+let city = "paris";
 if (city === null) {
   city = "";
 }
