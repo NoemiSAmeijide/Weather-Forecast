@@ -15,7 +15,7 @@ body {
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
   width: 100vw;
-  height: 600px;
+  height: 500px;
   background-position: center center;
   background-repeat: no-repeat;
   background-image: url("../img/sunnyday.jpg");

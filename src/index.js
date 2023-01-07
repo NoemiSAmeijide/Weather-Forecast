@@ -85,20 +85,31 @@ function convertion() {
 //function celc(fharenheit) {
 //return (fharenheit -32) * 5/9;};
 
-//THE ALERT
-if (a < 0) {
-  alert(
-    `Sorry, we don't know the weather for this city, try going to https://www.google.com/search?q=weather+${city}`
-  );
-} else {
-  let fharen = (temper) => {
-    (temper * 9) / 5 + 32;
-  };
-  alert(
-    `It is currently ${weather[city].temp}ºC (${fharen(
-      weather[city].temp
-    )} ºF) in ${city} with a humidity of ${weather[city].humidity}%.`
-  );
+//THE ALERT (activar després)
+// if (a < 0) {
+//   alert(
+//     `Sorry, we don't know the weather for this city, try going to https://www.google.com/search?q=weather+${city}`
+//   );
+// } else {
+//   let fharen = (temper) => {
+//     (temper * 9) / 5 + 32;
+//   };
+//   alert(
+//     `It is currently ${weather[city].temp}ºC (${fharen(
+//       weather[city].temp
+//     )} ºF) in ${city} with a humidity of ${weather[city].humidity}%.`
+//   );
+// }
+
+// CITY SEARCH FUNCTION
+
+function newCity(event) {
+  alert("searching...");
+  event.preventDefault();
+  let theCity = document.querySelector("#new-city-value");
+  console.log(theCity.value);
+  let cityName = document.querySelector("#selected-city");
+  cityName.innerHTML = theCity.value.toUpperCase();
 }
 
 //TIME
@@ -107,13 +118,16 @@ let theTime = document.querySelector("#the-time");
 //here we put it in the html
 theTime.innerHTML = `<p>${week[now.getDay()]}, ${
   mon[now.getMonth()]
-} ${now.getDate()}, ${now.getFullYear()}</p> <p>${now.getHours()} 
-${now.getMinutes()}</p>`;
+} ${now.getDate()}, ${now.getFullYear()}</p> <p>${now.getHours()} :
+${(now.getMinutes() < 10 ? "0" : "") + now.getMinutes()}</p>`;
 
 //CITY NAME
 //here we select and put the city name we are looking for in the html
 let selCity = document.querySelector("#selected-city");
 selCity.innerHTML = city.toUpperCase();
+// here the call to the city form
+let cityForm = document.querySelector("#city-form");
+cityForm.addEventListener("submit", newCity);
 
 //CONVERTION
 let convButton = document.querySelector("#fcf");
