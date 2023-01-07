@@ -17,7 +17,7 @@
   </head>
   <body>
     <div
-      class="vertical d-flex flex-column justify-content-between container w-75 p-3 rounded border border-secondary"
+      class="back d-flex flex-column justify-content-between container w-75 p-3 rounded border border-secondary shadow-lg"
     >
       <!-- part de dalt (tot menys els dies) -->
       <div>
@@ -36,7 +36,7 @@
                 placeholder="Enter new city"
                 id="new-city-value"
               />
-              <input type="submit" value="Search" class="btn btn-info" />
+              <input type="submit" value="Search" class="btn btn-info mx-2" />
             </form>
           </div>
 
@@ -46,7 +46,7 @@
           </div>
         </div>
         <!-- centre grup -->
-        <div class="d-flex justify-content-center">
+        <div class="d-flex justify-content-center rounded transp-bg">
           <!-- imatge i cercador -->
           <div class="d-flex flex-column justify-content-between">
             <!-- imatges i temp -->
@@ -55,24 +55,17 @@
               <!-- altres dades de l'API -->
               <div class="ml-1">
                 <div class="d-flex">
-                  <h2 class="temp">20º</h2>
-                  <h2 class="temp">C</h2>
+                  <h2 id="first-temp">20</h2>
+                  <h2 id="unit-c">ºC</h2>
                   <!-- botó temp -->
-                  <div>
-                    <button id="fcf" class="btn btn-info">to ºF</button>
+                  <div class="ml-1">
+                    <button id="fcf" class="btn btn-info mx-2">ºF</button>
                   </div>
                 </div>
-                <div class="d-flex">
-                  <h3 class="humi">90%</h3>
-                  <h3 class="humi">humidity</h3>
-                </div>
-                <div class="d-flex">
-                  <h3 class="wind">20 km/h</h3>
-                  <h3 class="wind">wind</h3>
-                </div>
-                <div class="d-flex">
-                  <h3 class="precip">20%</h3>
-                  <h3 class="precip">precipitation</h3>
+                <div>
+                  <p>90% humidity</p>
+                  <p>20 km/h wind</p>
+                  <p>90% precipitation</p>
                 </div>
               </div>
             </div>
@@ -81,43 +74,43 @@
       </div>
       <!-- dies de la setmana, part de baix -->
       <div>
-        <div class="d-flex flex-wrap justify-content-around">
-          <div class="rounded bg-white d-flex m-1">
+        <div class="d-flex flex-wrap justify-content-between">
+          <div class="rounded transp-bg d-flex m-1">
             <img src="./img/sun.png" alt="sun image" class="image-little" />
             <div class="d-flex flex-column justify-content-center m-0">
               <p>Tuesday</p>
               <p class="temp">20ºC</p>
             </div>
           </div>
-          <div class="rounded bg-white d-flex m-1">
+          <div class="rounded transp-bg d-flex m-1">
             <img src="./img/sun.png" alt="sun image" class="image-little" />
             <div class="d-flex flex-column justify-content-center m-0">
               <p>Tuesday</p>
               <p class="temp">20ºC</p>
             </div>
           </div>
-          <div class="rounded bg-white d-flex m-1">
+          <div class="rounded transp-bg d-flex m-1">
             <img src="./img/sun.png" alt="sun image" class="image-little" />
             <div class="d-flex flex-column justify-content-center m-0">
               <p>Tuesday</p>
               <p class="temp">20ºC</p>
             </div>
           </div>
-          <div class="rounded bg-white d-flex m-1">
+          <div class="rounded transp-bg d-flex m-1">
             <img src="./img/sun.png" alt="sun image" class="image-little" />
             <div class="d-flex flex-column justify-content-center m-0">
               <p>Tuesday</p>
               <p class="temp">20ºC</p>
             </div>
           </div>
-          <div class="rounded bg-white d-flex m-1">
+          <div class="rounded transp-bg d-flex m-1">
             <img src="./img/sun.png" alt="sun image" class="image-little" />
             <div class="d-flex flex-column justify-content-center m-0">
               <p>Tuesday</p>
               <p class="temp">20ºC</p>
             </div>
           </div>
-          <div class="rounded bg-white d-flex m-1">
+          <div class="rounded transp-bg d-flex m-1">
             <img src="./img/sun.png" alt="sun image" class="image-little" />
             <div class="d-flex flex-column justify-content-center m-0">
               <p>Tuesday</p>

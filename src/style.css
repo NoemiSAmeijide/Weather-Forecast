@@ -5,7 +5,7 @@ body {
   background-color: antiquewhite;
 }
 
-.vertical {
+.back {
   margin: 0;
   position: absolute;
   top: 20%;
@@ -20,6 +20,25 @@ body {
   background-repeat: no-repeat;
   background-image: url("../img/sunnyday.jpg");
   background-size: cover;
+}
+
+h1,
+h2 {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+h1 {
+  font-weight: bolder;
+  font-size: 40px;
+}
+h2 {
+  font-weight: normal;
+  font-size: 20px;
+}
+
+.transp-bg {
+  background-color: #ffffff77;
 }
 
 .image-little {

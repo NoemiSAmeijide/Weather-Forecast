@@ -46,6 +46,7 @@ let mon = [
   "Dec",
 ];
 
+// celcius is true by default
 let celcius = true;
 
 // let city = prompt("Enter a city");
@@ -64,26 +65,35 @@ var a = fruita.indexOf(city);
 console.log(a);
 
 //CONVERTION FUNCTIONS
-function convertion() {
+function convertion(event) {
+  event.preventDefault();
+  let originTemp = document.querySelector("#first-temp");
+  let unit = document.querySelector("#unit-c");
   let result;
+  let unitButton = document.querySelector("#fcf");
+
   if (celcius === true) {
     celcius = false;
-    result = (temp * 9) / 5 + 32;
+    unit.innerHTML = "ºF";
+    unitButton.innerHTML = "ºC";
+    result = `${(originTemp.textContent * 9) / 5 + 32} `;
   } else if (celcius === false) {
     celcius = true;
-    result = ((temp - 32) * 5) / 9;
+    unit.innerHTML = "ºC";
+    unitButton.innerHTML = "ºF";
+    result = `${((originTemp.textContent - 32) * 5) / 9} `;
   } else {
     result = "error in the code";
   }
-  return result;
+  originTemp.innerHTML = result;
+
+  console.log(result);
+  console.log(originTemp.textContent);
 }
 
-//Fharenhite to celcius
-//function fhar(celcius) {
-//return (celcius * 9) / 5 + 32;};
-//celcius to fharenheit
-//function celc(fharenheit) {
-//return (fharenheit -32) * 5/9;};
+// call to CONVERTION
+let fharCel = document.querySelector("#fcf");
+fharCel.addEventListener("click", convertion);
 
 //THE ALERT (activar després)
 // if (a < 0) {
@@ -104,22 +114,30 @@ function convertion() {
 // CITY SEARCH FUNCTION
 
 function newCity(event) {
-  alert("searching...");
   event.preventDefault();
   let theCity = document.querySelector("#new-city-value");
-  console.log(theCity.value);
   let cityName = document.querySelector("#selected-city");
-  cityName.innerHTML = theCity.value.toUpperCase();
+  let askCity = "NO CITY? 😅";
+  if (theCity.value) {
+    console.log(theCity.value);
+    alert("searching...");
+    cityName.innerHTML = theCity.value.toUpperCase();
+  } else {
+    console.log("value is needed");
+    alert("duuude!! ask me for a city");
+    cityName.innerHTML = askCity;
+  }
 }
 
 //TIME
 //here we select the space where the timer is going
 let theTime = document.querySelector("#the-time");
 //here we put it in the html
-theTime.innerHTML = `<p>${week[now.getDay()]}, ${
+let timeText = `<p>${week[now.getDay()]}, ${
   mon[now.getMonth()]
 } ${now.getDate()}, ${now.getFullYear()}</p> <p>${now.getHours()} :
 ${(now.getMinutes() < 10 ? "0" : "") + now.getMinutes()}</p>`;
+theTime.innerHTML = timeText;
 
 //CITY NAME
 //here we select and put the city name we are looking for in the html
@@ -129,7 +147,7 @@ selCity.innerHTML = city.toUpperCase();
 let cityForm = document.querySelector("#city-form");
 cityForm.addEventListener("submit", newCity);
 
-//CONVERTION
-let convButton = document.querySelector("#fcf");
-let temp = document.querySelectorAll(".temp");
-convButton.addEventListener("click", convertion);
+//CONVERTION borrar?
+// let convButton = document.querySelector("#fcf");
+// let temp = document.querySelectorAll(".temp");
+// convButton.addEventListener("click", convertion);
