@@ -1,27 +1,36 @@
 let weather = {
   paris: {
-    temp: 19.7,
+    temp: 21.9,
     humidity: 80,
+    wind: 32,
+    precipitation: 67,
   },
   tokyo: {
     temp: 17.3,
     humidity: 50,
+    wind: 90,
+    precipitation: 54,
   },
   lisbon: {
     temp: 30.2,
     humidity: 20,
+    wind: 13,
+    precipitation: 89,
   },
   "san francisco": {
     temp: 20.9,
     humidity: 100,
+    wind: 65,
+    precipitation: 42,
   },
   moscow: {
     temp: -5,
     humidity: 20,
+    wind: 62,
+    precipitation: 45,
   },
 };
 
-let now = new Date();
 let week = [
   "Sunday",
   "Monday",
@@ -58,11 +67,26 @@ city = city.trim();
 city = city.toLowerCase();
 console.log(city);
 
-var fruita = Object.keys(weather);
-console.log(fruita);
+// var fruita = Object.keys(weather);
+// console.log(fruita);
 
-var a = fruita.indexOf(city);
-console.log(a);
+// var a = fruita.indexOf(city);
+// console.log(a);
+
+//TIME
+setInterval(myTimer, 1000);
+
+function myTimer() {
+  let now = new Date();
+  //here we select the space where the timer is going
+  let theTime = document.querySelector("#the-time");
+  //here we put it in the html
+  let timeText = `<p>${week[now.getDay()]}, ${
+    mon[now.getMonth()]
+  } ${now.getDate()}, ${now.getFullYear()}</p> <p>${now.getHours()} :
+${(now.getMinutes() < 10 ? "0" : "") + now.getMinutes()}</p>`;
+  theTime.innerHTML = timeText;
+}
 
 //CONVERTION FUNCTIONS
 function convertion(event) {
@@ -77,18 +101,16 @@ function convertion(event) {
     unit.innerHTML = "ºF";
     unitButton.innerHTML = "ºC";
     result = `${(originTemp.textContent * 9) / 5 + 32} `;
-  } else if (celcius === false) {
+  } else {
     celcius = true;
     unit.innerHTML = "ºC";
     unitButton.innerHTML = "ºF";
     result = `${((originTemp.textContent - 32) * 5) / 9} `;
-  } else {
-    result = "error in the code";
   }
-  originTemp.innerHTML = result;
+  originTemp.innerHTML = Math.round(result * 10) / 10;
 
-  console.log(result);
-  console.log(originTemp.textContent);
+  // console.log(result);
+  // console.log(originTemp.textContent);
 }
 
 // call to CONVERTION
@@ -129,16 +151,6 @@ function newCity(event) {
   }
 }
 
-//TIME
-//here we select the space where the timer is going
-let theTime = document.querySelector("#the-time");
-//here we put it in the html
-let timeText = `<p>${week[now.getDay()]}, ${
-  mon[now.getMonth()]
-} ${now.getDate()}, ${now.getFullYear()}</p> <p>${now.getHours()} :
-${(now.getMinutes() < 10 ? "0" : "") + now.getMinutes()}</p>`;
-theTime.innerHTML = timeText;
-
 //CITY NAME
 //here we select and put the city name we are looking for in the html
 let selCity = document.querySelector("#selected-city");
@@ -147,7 +159,12 @@ selCity.innerHTML = city.toUpperCase();
 let cityForm = document.querySelector("#city-form");
 cityForm.addEventListener("submit", newCity);
 
-//CONVERTION borrar?
-// let convButton = document.querySelector("#fcf");
-// let temp = document.querySelectorAll(".temp");
-// convButton.addEventListener("click", convertion);
+// OTHER WEATHER DATA
+let temper = document.querySelector("#first-temp");
+temper.innerHTML = weather.paris.temp;
+let humi = document.querySelector("#humi");
+humi.innerHTML = weather.paris.humidity;
+let wind = document.querySelector("#wind");
+wind.innerHTML = weather.paris.wind;
+let preci = document.querySelector("#preci");
+preci.innerHTML = weather.paris.precipitation;
