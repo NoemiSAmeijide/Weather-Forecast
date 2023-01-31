@@ -1,6 +1,6 @@
 let weather = {
   paris: {
-    temp: 21.9,
+    temp: 21,
     humidity: 80,
     wind: 32,
     precipitation: 67,
@@ -80,12 +80,61 @@ function myTimer() {
   let now = new Date();
   //here we select the space where the timer is going
   let theTime = document.querySelector("#the-time");
+  let day1 = document.querySelector("#day-1");
+  let day2 = document.querySelector("#day-2");
+  let day3 = document.querySelector("#day-3");
+  let day4 = document.querySelector("#day-4");
+  let day5 = document.querySelector("#day-5");
+  let day6 = document.querySelector("#day-6");
   //here we put it in the html
   let timeText = `<p>${week[now.getDay()]}, ${
     mon[now.getMonth()]
   } ${now.getDate()}, ${now.getFullYear()}</p> <p>${now.getHours()} :
 ${(now.getMinutes() < 10 ? "0" : "") + now.getMinutes()}</p>`;
   theTime.innerHTML = timeText;
+
+  theDay1 = [now.getDay() + 1];
+  theDay2 = [now.getDay() + 2];
+  theDay3 = [now.getDay() + 3];
+  theDay4 = [now.getDay() + 4];
+  theDay5 = [now.getDay() + 5];
+  theDay6 = [now.getDay() + 6];
+
+  if (theDay1 > 6) {
+    theDay1 = theDay1 - 7;
+  }
+  day1.innerHTML = week[theDay1];
+  console.log(theDay1);
+
+  if (theDay2 > 6) {
+    theDay2 = theDay2 - 7;
+  }
+  day2.innerHTML = week[theDay2];
+  console.log(theDay2);
+
+  if (theDay3 > 6) {
+    theDay3 = theDay3 - 7;
+  }
+  day3.innerHTML = week[theDay3];
+  console.log(theDay3);
+
+  if (theDay4 > 6) {
+    theDay4 = theDay4 - 7;
+  }
+  day4.innerHTML = week[theDay4];
+  console.log(theDay4);
+
+  if (theDay5 > 6) {
+    theDay5 = theDay5 - 7;
+  }
+  day5.innerHTML = week[theDay5];
+  console.log(theDay5);
+
+  if (theDay6 > 6) {
+    theDay6 = theDay6 - 7;
+  }
+  day6.innerHTML = week[theDay6];
+  console.log(theDay6);
 }
 
 //CONVERTION FUNCTIONS
