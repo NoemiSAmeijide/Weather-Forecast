@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <!-- CSS only -->
     <link rel="stylesheet" href="./src/style.css" />
     <link
@@ -15,7 +16,7 @@
 
     <title>Document</title>
   </head>
-  <body>
+  <body class="">
     <div
       class="back d-flex flex-column justify-content-between container w-75 p-3 rounded border border-secondary shadow-lg"
     >
@@ -37,7 +38,12 @@
                 placeholder="Enter new city"
                 id="new-city-value"
               />
-              <input type="submit" value="Search" class="btn btn-info mx-2" />
+              <input
+                type="submit"
+                value="Search"
+                class="btn btn-info mx-2"
+                onclick.clearText()
+              />
             </form>
           </div>
 

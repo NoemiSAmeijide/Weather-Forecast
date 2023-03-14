@@ -1,3 +1,13 @@
+//API
+let apiKey = "ad72b888b6f98fb37028b3f98bab0381";
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=paris&appid=${apiKey}`;
+
+function showTemperature(response) {
+  console.log(response);
+}
+
+axios.get(apiUrl).then(showTemperature);
+//weather data
 let weather = {
   paris: {
     temp: 21,
@@ -104,37 +114,31 @@ ${(now.getMinutes() < 10 ? "0" : "") + now.getMinutes()}</p>`;
     theDay1 = theDay1 - 7;
   }
   day1.innerHTML = week[theDay1];
-  console.log(theDay1);
 
   if (theDay2 > 6) {
     theDay2 = theDay2 - 7;
   }
   day2.innerHTML = week[theDay2];
-  console.log(theDay2);
 
   if (theDay3 > 6) {
     theDay3 = theDay3 - 7;
   }
   day3.innerHTML = week[theDay3];
-  console.log(theDay3);
 
   if (theDay4 > 6) {
     theDay4 = theDay4 - 7;
   }
   day4.innerHTML = week[theDay4];
-  console.log(theDay4);
 
   if (theDay5 > 6) {
     theDay5 = theDay5 - 7;
   }
   day5.innerHTML = week[theDay5];
-  console.log(theDay5);
 
   if (theDay6 > 6) {
     theDay6 = theDay6 - 7;
   }
   day6.innerHTML = week[theDay6];
-  console.log(theDay6);
 }
 
 //CONVERTION FUNCTIONS
