@@ -1,12 +1,3 @@
-//API
-let apiKey = "ad72b888b6f98fb37028b3f98bab0381";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=paris&appid=${apiKey}`;
-
-function showTemperature(response) {
-  console.log(response);
-}
-
-axios.get(apiUrl).then(showTemperature);
 //weather data
 let weather = {
   paris: {
@@ -221,3 +212,24 @@ let wind = document.querySelector("#wind");
 wind.innerHTML = weather.paris.wind;
 let preci = document.querySelector("#preci");
 preci.innerHTML = weather.paris.precipitation;
+
+//API
+let apiKey = "ad72b888b6f98fb37028b3f98bab0381";
+let cityApp = "Sydney";
+let units = "metric";
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityApp}&appid=${apiKey}&units=${units}`;
+
+function showTemperature(response) {
+  console.log(response.data.main.temp);
+  //let sydney = document.querySelector("h1");
+  //sydney.innerHTML = `${Math.round(response.data.main.temp)}ºC`;
+}
+
+axios.get(apiUrl).then(showTemperature);
+
+//Geolocation
+
+function showPosition(position) {
+  console.log(position);
+}
+navigator.geolocation.getCurrentPosition(showPosition);
